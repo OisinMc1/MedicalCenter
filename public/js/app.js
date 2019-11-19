@@ -27199,7 +27199,7 @@ return jQuery;
      * @returns {Function} Returns the new debounced function.
      * @example
      *
-     * // Avoid costly calculations while the window size is in flux.
+     * // Avoid cost_of_visitly calculations while the window size is in flux.
      * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
      *
      * // Invoke `sendMail` when clicked, debouncing subsequent calls.

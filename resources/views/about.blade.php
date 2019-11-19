@@ -8,10 +8,7 @@
                 <div class="card-header">Welcome</div>
 
                 <div class="card-body">
-                    Welcome to the Medical Center! <a href="{{ route('admin.visits.index') }}">Visits</a>
-
-                    <br/>
-                    Learn more <a href="{{route('about')}}">about us</a>
+                    This is an about page!
                 </div>
             </div>
         </div>
