@@ -15,6 +15,9 @@
                     @endif
 
                     You are logged in as an Admin!
+
+                    <br>
+                    Welcome to the Medical Center! <a href="{{ route('admin.visits.index') }}">Visits</a>
                 </div>
             </div>
         </div>

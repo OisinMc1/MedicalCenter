@@ -15,6 +15,9 @@
                     @endif
 
                     You are logged in as an Patient!
+
+                    <br>
+                    Welcome to the Medical Center! <a href="{{ route('patient.visits.index') }}">Visits</a>
                 </div>
             </div>
         </div>

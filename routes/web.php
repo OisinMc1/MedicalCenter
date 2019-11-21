@@ -29,5 +29,5 @@ Route::get('/admin/visits/{id}/edit', 'Admin\VisitController@edit')->name('admin
 Route::put('/admin/visits/{id}', 'Admin\VisitController@update')->name('admin.visits.update');
 Route::delete('/admin/visits/{id}', 'Admin\VisitController@destroy')->name('admin.visits.destroy');
 
-Route::get('/user/visits', 'User\VisitController@index')->name('user.visits.index');
-Route::get('/user/visits/create', 'User\VisitController@create')->name('user.visits.create');
+Route::get('/patient/visits', 'Patient\VisitController@index')->name('patient.visits.index');
+Route::get('/patient/visits/{id}', 'Patient\VisitController@show')->name('patient.visits.show');

@@ -110,11 +110,9 @@ class VisitController extends Controller
         'cost_of_visit' => 'required',
       ]);
 
-      $visit = new Visit();
       $visit->date = $request->input('date');
       $visit->time = $request->input('time');
       $visit->cost_of_visit = $request->input('cost_of_visit');
-
       $visit->save();
 
       return redirect()->route('admin.visits.index');
@@ -131,7 +129,7 @@ class VisitController extends Controller
     {
         $visit = Visit::findOrFail($id);
 
-        $book->delete();
+        $visit->delete();
 
         return redirect()->route('admin.visits.index');
     }

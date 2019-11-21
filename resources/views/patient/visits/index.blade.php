@@ -8,7 +8,6 @@
       <div class="card">
         <div class="card-header">
           Visits
-          <a href="{{ route('admin.visits.create') }}" class="btn btn-primary float-right">Add</a>
         </div>
         <div class="card-body">
           @if (count($visits) === 0 )
@@ -28,13 +27,7 @@
                 <td>{{ $visit->time }}</td>
                 <td>{{ $visit->cost_of_visit }}</td>
                 <td>
-                  <a href="{{ route('admin.visits.show',$visit->id) }}" class="btn btn-default">View</a>
-                  <a href="{{ route('admin.visits.edit',$visit->id) }}" class="btn btn-warning">Edit</a>
-                  <form style="display:inline-block" method="POST" action="{{route('admin.visits.destroy', $visit->id) }}">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <button type="submit" class="form-control btn btn-danger">Delete</a>
-                  </form>
+                  <a href="{{ route('patient.visits.show',$visit->id) }}" class="btn btn-default">View</a>
                 </td>
               </tr>
               @endforeach
