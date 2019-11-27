@@ -18,6 +18,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('doctor.home');
+        $user = Auth::user();
+
+        return view('doctor.home')->with([
+          'user'=> $user
+        ]);
     }
 }

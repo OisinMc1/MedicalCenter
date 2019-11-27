@@ -15,6 +15,15 @@
                     @endif
 
                     You are logged in as an Doctor!
+                    <br>
+                    Hello {{ Auth::user()->name }}
+                    <br>
+                    Email: {{ Auth::user()->email }}
+                    <br>
+                    Address: {{ Auth::user()->doctor->address }}
+                    <br>
+                    Phone: {{ Auth::user()->doctor->phone }}
+
                 </div>
             </div>
         </div>
