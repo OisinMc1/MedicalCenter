@@ -18,6 +18,8 @@
 
                     <br>
                     Welcome to the Medical Center! <a href="{{ route('admin.visits.index') }}">Visits</a>
+                    Welcome to the Medical Center! <a href="{{ route('admin.doctors.index') }}">Doctors</a>
+                    Welcome to the Medical Center! <a href="{{ route('admin.patients.index') }}">Patients</a>
                 </div>
             </div>
         </div>
