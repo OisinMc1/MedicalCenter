@@ -18,7 +18,12 @@ class CreateVisitsTable extends Migration
             $table->date('date');
             $table->time('time');
             $table->decimal('cost_of_visit',8,2);
+            $table->bigInteger('patient_id')->unsigned();
+            $table->bigInteger('doctor_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('patient_id')->references('id')->on('patients')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('doctor_id')->references('id')->on('doctor')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

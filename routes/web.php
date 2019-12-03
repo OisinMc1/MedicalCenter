@@ -37,6 +37,9 @@ Route::get('/admin/patients/{id}/edit', 'Admin\PatientController@edit')->name('a
 Route::put('/admin/patients/{id}', 'Admin\PatientController@update')->name('admin.patients.update');
 Route::delete('/admin/patients/{id}', 'Admin\PatientController@destroy')->name('admin.patients.destroy');
 
+Route::get('/admin/patients/{id}/reviews/create', 'Admin\VisitController@create')->name('admin.visits.create');
+Route::post('/admin/patients/{id}/reviews/store', 'Admin\VisitController@store')->name('admin.visits.store');
+
 Route::get('/admin/doctors', 'Admin\DoctorController@index')->name('admin.doctors.index');
 Route::get('/admin/doctors/create', 'Admin\DoctorController@create')->name('admin.doctors.create');
 Route::get('/admin/doctors/{id}', 'Admin\DoctorController@show')->name('admin.doctors.show');
