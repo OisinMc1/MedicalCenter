@@ -51,5 +51,19 @@ class UsersTableSeeder extends Seeder
       $patient->password = bcrypt('secret');
       $patient->save();
       $patient->roles()->attach($role_patient);
+
+      $patient = new User();
+      $patient->name = 'The Man';
+      $patient->email = 't@mybookstore.ie';
+      $patient->password = bcrypt('secret');
+      $patient->save();
+      $patient->roles()->attach($role_patient);
+
+      $patient = new User();
+      $patient->name = 'Ze Man';
+      $patient->email = 'z@mybookstore.ie';
+      $patient->password = bcrypt('secret');
+      $patient->save();
+      $patient->roles()->attach($role_patient);
     }
 }

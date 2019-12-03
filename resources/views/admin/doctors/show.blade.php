@@ -18,23 +18,23 @@
               <td>{{ $doctor->user->name }}</td>
             </tr>
               <tr>
-              <th>Date</th>
+              <th>Address</th>
               <td>{{ $doctor->address }}</td>
             </tr>
             <tr>
-              <th>Time</th>
+              <th>Phone</th>
               <td>{{ $doctor->phone }}</td>
             </tr>
             <tr>
-              <th>Cost of Visit</th>
+              <th>Date Started</th>
               <td>{{ $doctor->date_started }}</td>
             </tr>
             <tr>
             </tbody>
         </table>
-        <a href="{{ route('admin.visits.index') }}" class="btn btn-default">Back</a>
-        <a href="{{ route('admin.visits.edit',$visit->id) }}" class="btn btn-warning">Edit</a>
-        <form style="display:inline-block" method="POST" action="{{route('admin.visits.destroy', $visit->id) }}">
+        <a href="{{ route('admin.doctors.index') }}" class="btn btn-default">Back</a>
+        <a href="{{ route('admin.doctors.edit',$doctor->id) }}" class="btn btn-warning">Edit</a>
+        <form style="display:inline-block" method="POST" action="{{route('admin.doctors.destroy', $doctor->id) }}">
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <button type="submit" class="form-control btn btn-danger">Delete</a>

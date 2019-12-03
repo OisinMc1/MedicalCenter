@@ -6,7 +6,7 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Add new visits
+            Add New Doctors
           </div>
           <div class="card-body">
             @if ($errors->any())
@@ -18,22 +18,27 @@
                 </ul>
               </div>
             @endif
-            <form method = "POST" action = "{{route('admin.patients.store')}}">
-              <input type ="hidden" name="_token" value="{{ csrf_token()}}">
-              <div class="form-group">
-                <label for ="date"> Date </label>
-                <input type ="date" class="form-control" id="date" name="date" value="{{old('date')}}"/>
-              </div>
-              <div class="form-group">
-                <label for ="time"> Time </label>
-                <input type ="time" class="form-control" id="time" name="time" value="{{old('time')}}"/>
-              </div>
-              <div class="form-group">
-                <label for ="title"> Cost of Visit </label>
-                <input type ="text" class="form-control" id="cost_of_visit" name="cost_of_visit" value="{{old('cost_of_visit')}}"/>
-              </div>
-              <a href="{{route('admin.visits.index')}}" class="btn btn-outline"> Cancel </a>
-              <button type="submit" class="btn btn-primary float-right"> Submit </button>
+            <form method="POST" action="{{route('admin.doctors.store')}}">
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_token" value="{{ csrf_token()}}">
+                <div class="form-group">
+                    <label for="name"> Name </label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" />
+                </div>
+                <div class="form-group">
+                    <label for="address"> Address </label>
+                    <input type="text" class="form-control" id="address" name="address" value="{{old('address')}}" />
+                </div>
+                <div class="form-group">
+                    <label for="phone"> Phone </label>
+                    <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone')}}" />
+                </div>
+                <div class="form-group">
+                    <label for="date_started"> Date Started </label>
+                    <input type="date" class="form-control" id="date_started" name="date_started" value="{{old('date_started')}}" />
+                </div>
+                <a href="{{route('admin.doctors.index')}}" class="btn btn-outline"> Cancel </a>
+                <button type="submit" class="btn btn-primary float-right"> Submit </button>
             </form>
           </div>
         </div>

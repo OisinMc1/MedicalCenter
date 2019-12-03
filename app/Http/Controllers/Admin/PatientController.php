@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Doctor;
+use App\Patient;
 use App\User;
 use App\Role;
 
-class DoctorController extends Controller
+class PatientController extends Controller
 {
 
     public function __construct()
@@ -23,10 +23,10 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $doctors = Doctor::all();
+        $patients = Patient::all();
 
         return view('admin.doctors.index')->with([
-          'doctors' => $doctors
+          'patients' => $patients
         ]);
     }
 
@@ -37,7 +37,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('admin.doctors.create');
+        return view('admin.patients.create');
     }
 
     /**
@@ -61,14 +61,14 @@ class DoctorController extends Controller
 
         $user->save();
 
-        $doctor = new Doctor();
-        $doctor->address = $request->input('address');
-        $doctor->phone = $request->input('phone');
-        $doctor->date_started = $request->input('date_started');
-        $doctor->user_id = $user->id;
-        $doctor->save();
+        $patient = new Patient();
+        $patient->address = $request->input('address');
+        $patient->phone = $request->input('phone');
+        $patient->date_started = $request->input('date_started');
+        $patient->user_id = $user->id;
+        $patient->save();
 
-        return redirect()->route('admin.doctors.index');
+        return redirect()->route('admin.patients.index');
     }
 
     /**
@@ -79,10 +79,10 @@ class DoctorController extends Controller
      */
     public function show($id)
     {
-        $doctor = Doctor::findOrFail($id);
+        $patient = Patient::findOrFail($id);
 
-        return view('admin.doctors.show')->with([
-          'doctor' => $doctor
+        return view('admin.patients.show')->with([
+          'patient' => $patient
         ]);
     }
 
@@ -94,10 +94,10 @@ class DoctorController extends Controller
      */
     public function edit($id)
     {
-        $doctor = Doctor::findOrFail($id);
+        $patient = Patient::findOrFail($id);
 
-        return view('admin.doctors.edit')->with([
-          'doctor' => $doctor
+        return view('admin.patients.edit')->with([
+          'patient' => $patient
       ]);
     }
 
@@ -110,7 +110,7 @@ class DoctorController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $doctor = Doctor::findOrFail($id);
+      $patient = Patient::findOrFail($id);
 
       $request->validate([
         'address' => 'required',
@@ -118,12 +118,12 @@ class DoctorController extends Controller
         'date_started' => 'required',
       ]);
 
-      $doctor->address = $request->input('address');
-      $doctor->phone = $request->input('phone');
-      $doctor->date_started = $request->input('date_started');
-      $doctor->save();
+      $patient->address = $request->input('address');
+      $patient->phone = $request->input('phone');
+      $patient->date_started = $request->input('date_started');
+      $patient->save();
 
-      return redirect()->route('admin.doctors.index');
+      return redirect()->route('admin.patients.index');
     }
 
 
@@ -135,10 +135,10 @@ class DoctorController extends Controller
      */
     public function destroy($id)
     {
-        $doctor = Doctor::findOrFail($id);
+        $patient = Patient::findOrFail($id);
 
-        $doctor->delete();
+        $patient->delete();
 
-        return redirect()->route('admin.doctors.index');
+        return redirect()->route('admin.patients.index');
     }
 }
