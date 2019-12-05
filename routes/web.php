@@ -47,6 +47,7 @@ Route::post('/admin/doctors/store', 'Admin\DoctorController@store')->name('admin
 Route::get('/admin/doctors/{id}/edit', 'Admin\DoctorController@edit')->name('admin.doctors.edit');
 Route::put('/admin/doctors/{id}', 'Admin\DoctorController@update')->name('admin.doctors.update');
 Route::delete('/admin/doctors/{id}', 'Admin\DoctorController@destroy')->name('admin.doctors.destroy');
+// Route::post('/test','Admin\DoctorController@store')->name('admin.doctors.store');
 
 Route::get('/patient/visits', 'Patient\VisitController@index')->name('patient.visits.index');
 Route::get('/patient/visits/{id}', 'Patient\VisitController@show')->name('patient.visits.show');

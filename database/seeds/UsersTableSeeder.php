@@ -65,5 +65,6 @@ class UsersTableSeeder extends Seeder
       $patient->password = bcrypt('secret');
       $patient->save();
       $patient->roles()->attach($role_patient);
+
     }
 }

@@ -18,20 +18,20 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="POST" action="{{route('admin.doctors.update', $doctor->id)}}">
+                    <form method="POST" action="{{route('admin.doctors.update', $doctors->id)}}">
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token()}}">
                         <div class="form-group">
                             <label for="address"> Address </label>
-                            <input type="text" class="form-control" id="address" name="address" value="{{old('address', $doctor->address)}}" />
+                            <input type="text" class="form-control" id="address" name="address" value="{{old('address', $doctors->address)}}" />
                         </div>
                         <div class="form-group">
                             <label for="phone"> Time </label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone', $doctor->phone)}}" />
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone', $doctors->phone)}}" />
                         </div>
                         <div class="form-group">
                             <label for="date_started"> Date Started </label>
-                            <input type="date" class="form-control" id="date_started" name="date_started" value="{{old('date_started', $doctor->date_started)}}" />
+                            <input type="date" class="form-control" id="date_started" name="date_started" value="{{old('date_started', $doctors->date_started)}}" />
                         </div>
                         <a href="{{route('admin.doctors.index')}}" class="btn btn-outline"> Cancel </a>
                         <button type="submit" class="btn btn-primary float-right"> Submit </button>

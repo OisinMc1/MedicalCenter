@@ -28,7 +28,9 @@ class DoctorController extends Controller
         return view('admin.doctors.index')->with([
           'doctors' => $doctors
         ]);
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -48,18 +50,22 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
+        $role_doctor = Role::where('name', 'doctor')->first();
+
         $request->validate([
+            'name' => 'required',
+            'email' => 'required',
             'address' => 'required',
             'phone' => 'required',
-            'date_started' => 'required',
+            'date_started' => 'required'
         ]);
 
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = $request->input('secret');
-
+        $user->password = bcrypt('secret');
         $user->save();
+        $user->roles()->attach($role_doctor);
 
         $doctor = new Doctor();
         $doctor->address = $request->input('address');
@@ -94,10 +100,10 @@ class DoctorController extends Controller
      */
     public function edit($id)
     {
-        $doctor = Doctor::findOrFail($id);
+        $doctors = Doctor::findOrFail($id);
 
         return view('admin.doctors.edit')->with([
-          'doctor' => $doctor
+          'doctors' => $doctors
       ]);
     }
 
