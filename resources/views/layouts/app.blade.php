@@ -26,6 +26,23 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+
+                {{-- @if (Auth::user() && Auth::user()->hasRole('admin'))
+                  <a class="navbar-brand" href="{{ route(admin.doctors.index)}}"> Doctors </a>
+                  <a class="navbar-brand" href="{{ route(admin.patients.index)}}"> Patients </a>
+                  <a class="navbar-brand" href="{{ route(admin.visits.index)}}"> Visits </a>
+
+                @elseif (Auth::user() && Auth::user()->hasRole('doctor'))
+                    <a class="navbar-brand" href="{{ route(doctor.doctors.index)}}"> Doctors </a>
+                    <a class="navbar-brand" href="{{ route(doctor.patients.index)}}"> Patients </a>
+                    <a class="navbar-brand" href="{{ route(doctor.visits.index)}}"> Visits </a>
+
+                @elseif (Auth::user() && Auth::user()->hasRole('patient'))
+                    <a class="navbar-brand" href="{{ route(patient.doctors.index)}}"> Doctors </a>
+                    <a class="navbar-brand" href="{{ route(patient.patients.index)}}"> Patients </a>
+                    <a class="navbar-brand" href="{{ route(patient.visits.index)}}"> Visits </a>
+                @endif --}}
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
