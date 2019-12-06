@@ -25,7 +25,7 @@ class PatientController extends Controller
     {
         $patients = Patient::all();
 
-        return view('admin.doctors.index')->with([
+        return view('admin.patients.index')->with([
           'patients' => $patients
         ]);
     }
@@ -48,23 +48,27 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
+        $role_patient = Role::where('name', 'patient')->first();
+
         $request->validate([
+            'name' => 'required',
+            'email' => 'required',
             'address' => 'required',
             'phone' => 'required',
-            'date_started' => 'required',
+            'insurance' => 'required',
         ]);
 
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = $request->input('secret');
-
+        $user->password = bcrypt('secret');
         $user->save();
+        $user->roles()->attach($role_patient);
 
         $patient = new Patient();
         $patient->address = $request->input('address');
         $patient->phone = $request->input('phone');
-        $patient->date_started = $request->input('date_started');
+        $patient->insurance = $request->input('insurance');
         $patient->user_id = $user->id;
         $patient->save();
 
@@ -115,12 +119,12 @@ class PatientController extends Controller
       $request->validate([
         'address' => 'required',
         'phone' => 'required',
-        'date_started' => 'required',
+        'insurance' => 'required',
       ]);
 
       $patient->address = $request->input('address');
       $patient->phone = $request->input('phone');
-      $patient->date_started = $request->input('date_started');
+      $patient->insurance = $request->input('insurance');
       $patient->save();
 
       return redirect()->route('admin.patients.index');
