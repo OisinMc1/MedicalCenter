@@ -28,6 +28,9 @@
               <td>{{$visit->time}}</td>
               <td>{{$visit->cost_of_visit}}</td>
             </tr>
+
+            <!-- Displays Doctors -->
+
             </tbody>
         </table>
         <a href="{{ route('admin.visits.index',$visit->id) }}" class="btn btn-default">Back</a>

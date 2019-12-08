@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<!-- Admin Home Page -->
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -15,6 +17,8 @@
                     @endif
 
                     You are logged in as an Admin!
+
+                    <!-- Links to Tables Pages -->
 
                     <br>
                     Welcome to the Medical Center! <a href="{{ route('admin.visits.index') }}">Visits</a>

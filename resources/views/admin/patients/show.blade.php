@@ -8,6 +8,9 @@
         <div class="card-header">
           Visits
         </div>
+
+        <!-- Displays Doctors -->
+
         <div class="card-body">
           <table class="table table-hover">
             <thead>

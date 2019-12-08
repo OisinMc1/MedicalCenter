@@ -1,5 +1,7 @@
 <?php
 
+// Role model
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;

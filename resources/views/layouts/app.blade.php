@@ -26,22 +26,25 @@
                 <a class="navbar-brand" href="{{ route('welcome')}}"> Medical Centre </a>
                 </a>
 
+                <!-- Navbar Links -->
 
-
+                <!-- Routes for Admin -->
                 @if (Auth::user() && Auth::user()->hasRole('admin'))
                     <a class="navbar-brand" href="{{ route('admin.doctors.index')}}"> Doctors </a>
                     <a class="navbar-brand" href="{{ route('admin.visits.index')}}"> Visits </a>
                     <a class="navbar-brand" href="{{ route('admin.patients.index')}}"> Patients </a>
 
+                <!-- Routes for Doctor -->
                 @elseif (Auth::user() && Auth::user()->hasRole('doctor'))
                     <a class="navbar-brand" > Doctors </a>
                     <a class="navbar-brand" > Patients </a>
-                    <a class="navbar-brand" > Visits </a>
+                    <a class="navbar-brand" href="{{ route('admin.visits.index')}}"> Visits </a>
 
+                <!-- Routes for Patient -->
                 @elseif (Auth::user() && Auth::user()->hasRole('patient'))
                     <a class="navbar-brand" > Doctors </a>
                     <a class="navbar-brand" > Patients </a>
-                    <a class="navbar-brand" > Visits </a>
+                    <a class="navbar-brand" href="{{ route('admin.visits.index')}}"> Visits </a>
                 @endif
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

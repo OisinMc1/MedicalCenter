@@ -11,6 +11,9 @@ class CreateRolesTable extends Migration
      *
      * @return void
      */
+
+     //Creating the Roles Table with columns
+
      public function up()
      {
          Schema::create('roles', function (Blueprint $table) {

@@ -21,6 +21,9 @@
               <th>Time</th>
               <th>Cost</th>
             </tr>
+
+            <!-- Displays Doctors -->
+
             <tr>
               <td>{{$visit->doctor->user->name}}</td>
               <td>{{$visit->patient->user->name}}</td>

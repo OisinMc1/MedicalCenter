@@ -23,6 +23,9 @@
               <th></th>
             </thead>
             <tbody>
+
+              <!-- Doctors Table -->
+
               @foreach ($visits as $visit)
               @if ($visit->doctor->user->id == Auth::user()->id)
               <tr data-id="{{ $visit->id }}">

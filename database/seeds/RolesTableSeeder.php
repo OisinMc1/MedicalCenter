@@ -10,6 +10,9 @@ class RolesTableSeeder extends Seeder
      *
      * @return void
      */
+
+    //Defining Roles
+
     public function run()
     {
       $role_admin = new Role();

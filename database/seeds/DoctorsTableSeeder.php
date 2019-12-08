@@ -1,5 +1,7 @@
 <?php
 
+//Doctors Table Seeder
+
 use Illuminate\Database\Seeder;
 use App\Role;
 use App\Doctor;
@@ -11,6 +13,9 @@ class DoctorsTableSeeder extends Seeder
      *
      * @return void
      */
+
+     //Doctor Information
+
     public function run()
     {
         $role_user = Role::where('name', 'doctor')->first();
@@ -24,6 +29,8 @@ class DoctorsTableSeeder extends Seeder
           $doctor->save();
         }
     }
+
+    //Random Generator
 
     private function random_str($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
 

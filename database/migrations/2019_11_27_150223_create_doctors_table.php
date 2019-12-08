@@ -11,6 +11,9 @@ class CreateDoctorsTable extends Migration
      *
      * @return void
      */
+
+    //Creating the Doctors Table with columns 
+
     public function up()
     {
         Schema::create('doctors', function (Blueprint $table) {

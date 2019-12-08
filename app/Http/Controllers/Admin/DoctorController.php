@@ -1,5 +1,7 @@
 <?php
 
+//DoctorAdmin Controller
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -21,6 +23,9 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //DoctorAdmin index Function
+
     public function index()
     {
         $doctors = Doctor::all();
@@ -37,6 +42,9 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     //DoctorAdmin create Function
+
     public function create()
     {
         return view('admin.doctors.create');
@@ -48,6 +56,9 @@ class DoctorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    //DoctorAdmin store Function
+
     public function store(Request $request)
     {
         $role_doctor = Role::where('name', 'doctor')->first();
@@ -83,6 +94,10 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //DoctorAdmin show Function
+
+
     public function show($id)
     {
         $doctor = Doctor::findOrFail($id);
@@ -98,6 +113,9 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //DoctorAdmin edit Function
+
     public function edit($id)
     {
         $doctors = Doctor::findOrFail($id);
@@ -114,6 +132,9 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //DoctorAdmin update Function
+
     public function update(Request $request, $id)
     {
       $doctor = Doctor::findOrFail($id);
@@ -139,6 +160,9 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //DoctorAdmin destroy Function
+
     public function destroy($id)
     {
         $doctor = Doctor::findOrFail($id);

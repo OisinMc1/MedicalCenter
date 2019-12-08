@@ -1,5 +1,7 @@
 <?php
 
+//Patients Table Seeder
+
 use Illuminate\Database\Seeder;
 use App\Role;
 use App\User;
@@ -12,6 +14,9 @@ class PatientsTableSeeder extends Seeder
      *
      * @return void
      */
+
+     //Patient Information
+
      public function run()
      {
          $role_user = Role::where('name', 'patient')->first();

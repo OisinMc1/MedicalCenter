@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<!-- Patients Home Page -->
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

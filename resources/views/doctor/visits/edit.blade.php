@@ -20,6 +20,9 @@
             </ul>
           </div>
           @endif
+
+          <!-- Patients Edit Form -->
+
           <form method = "POST" action ="{{ route('doctor.visits.update',$visit->id) }}">
             <input type ="hidden" name="_method" value="PUT">
             <input type ="hidden" name="_token" value="{{ csrf_token()}}">

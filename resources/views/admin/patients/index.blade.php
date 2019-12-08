@@ -8,6 +8,9 @@
       <div class="card">
         <div class="card-header">
           Patients
+
+          <!-- Add Doctors -->
+
           <a href="{{ route('admin.patients.create') }}" class="btn btn-primary float-right">Add</a>
         </div>
         <div class="card-body">
@@ -22,6 +25,9 @@
               <th>insurance</th>
 
             </thead>
+
+            <!-- Doctors Table -->
+
             <tbody>
               @foreach ($patients as $patient)
               <tr data-id="{{ $patient->id }}">
@@ -30,6 +36,9 @@
                 <td>{{ $patient->phone }}</td>
                 <td>{{ $patient->insurance }}</td>
                 <td>
+
+                  <!-- Edit, Delete & Show -->
+
                   <a href="{{ route('admin.patients.show',$patient->id) }}" class="btn btn-default">View</a>
                   <a href="{{ route('admin.patients.edit',$patient->id) }}" class="btn btn-warning">Edit</a>
                   <form style="display:inline-block" method="POST" action="{{route('admin.patients.destroy', $patient->id) }}">

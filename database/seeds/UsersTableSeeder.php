@@ -1,5 +1,7 @@
 <?php
 
+//Users Table Seeder
+
 use Illuminate\Database\Seeder;
 use App\Role;
 use App\User;

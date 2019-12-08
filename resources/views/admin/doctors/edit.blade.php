@@ -8,6 +8,9 @@
                 <div class="card-header">
                     Edit doctors
                 </div>
+
+                <!-- Error Message Display -->
+
                 <div class="card-body">
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -18,6 +21,9 @@
                         </ul>
                     </div>
                     @endif
+
+                    <!-- Doctors Edit Form -->
+
                     <form method="POST" action="{{route('admin.doctors.update', $doctors->id)}}">
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token()}}">

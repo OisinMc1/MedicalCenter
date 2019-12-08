@@ -1,6 +1,4 @@
 <?php
-# @Date:   2019-12-08T03:57:07+00:00
-# @Last modified time: 2019-12-08T15:24:28+00:00
 
 
 
@@ -16,6 +14,9 @@ class CreateVisitsTable extends Migration
      *
      * @return void
      */
+
+    //Creating the Visits Table with columns
+
     public function up()
     {
         Schema::create('visits', function (Blueprint $table) {

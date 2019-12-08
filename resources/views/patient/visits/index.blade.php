@@ -21,6 +21,9 @@
               <th>Cost</th>
               <th></th>
             </thead>
+
+            <!-- Patients Table -->
+
             <tbody>
               @foreach ($visits as $visit)
               @if ($visit->patient->user->id == Auth::user()->id)

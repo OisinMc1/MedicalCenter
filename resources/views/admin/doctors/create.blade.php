@@ -8,6 +8,9 @@
           <div class="card-header">
             Add New Doctors
           </div>
+
+          <!-- Error Message Display -->
+
           <div class="card-body">
             @if ($errors->any())
               <div class="alert alert-danger">
@@ -18,6 +21,9 @@
                 </ul>
               </div>
             @endif
+
+            <!-- Doctors Create Form -->
+
             <form method="POST" action="{{ route('admin.doctors.store') }}">
                 <input type="hidden" name="_method" value="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token()}}">

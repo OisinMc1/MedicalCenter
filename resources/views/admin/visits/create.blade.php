@@ -19,6 +19,9 @@
             </ul>
           </div>
           @endif
+
+          <!-- Visits Create Form -->
+
           <form method = "POST" action = "{{route('admin.visits.store')}}">
             <input type ="hidden" name="_token" value="{{ csrf_token()}}">
             <div class="form-group">

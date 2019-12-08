@@ -1,5 +1,7 @@
 <?php
 
+//AdminPatient Controller
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -21,6 +23,7 @@ class PatientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $patients = Patient::all();

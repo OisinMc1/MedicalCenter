@@ -8,12 +8,17 @@
       <div class="card">
         <div class="card-header">
           Doctors
+
+          <!-- Add Doctors -->
+
           <a href="{{ route('admin.doctors.create') }}" class="btn btn-primary float-right">Add</a>
+
         </div>
         <div class="card-body">
           @if (count($doctors) === 0 )
           <p> There are no Doctors</p>
           @else
+
           <table id="table-doctors" class="table table-hover">
             <thead>
               <th>Name</th>
@@ -22,6 +27,9 @@
               <th>Date Started</th>
 
             </thead>
+
+            <!-- Doctors Table -->
+
             <tbody>
               @foreach ($doctors as $doctor)
               <tr data-id="{{ $doctor->id }}">
@@ -30,6 +38,9 @@
                 <td>{{ $doctor->phone }}</td>
                 <td>{{ $doctor->date_started }}</td>
                 <td>
+
+                  <!-- Edit, Delete & Show -->
+
                   <a href="{{ route('admin.doctors.show',$doctor->id) }}" class="btn btn-default">View</a>
                   <a href="{{ route('admin.doctors.edit',$doctor->id) }}" class="btn btn-warning">Edit</a>
                   <form style="display:inline-block" method="POST" action="{{route('admin.doctors.destroy', $doctor->id) }}">

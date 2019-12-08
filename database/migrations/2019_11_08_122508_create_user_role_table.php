@@ -11,6 +11,9 @@ class CreateUserRoleTable extends Migration
      *
      * @return void
      */
+
+    //Creating the Users Table with columns
+
      public function up()
      {
          Schema::create('user_role', function (Blueprint $table) {
@@ -20,6 +23,7 @@ class CreateUserRoleTable extends Migration
              $table->timestamps();
 
 
+    // Creating foreign key Constraints      
              $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
              $table->foreign('role_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
          });

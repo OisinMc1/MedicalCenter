@@ -23,6 +23,9 @@
               <th></th>
             </thead>
             <tbody>
+
+              <!-- Doctors Table -->
+
               @foreach ($visits as $visit)
               <tr data-id="{{ $visit->id }}">
                 <td>{{ $visit->doctor->user->name }}</td>

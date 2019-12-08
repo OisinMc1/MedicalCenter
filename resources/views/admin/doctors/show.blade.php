@@ -12,6 +12,9 @@
           <table class="table table-hover">
             <thead>
             </thead>
+
+            <!-- Displays Doctors -->
+
             <tbody>
               <tr>
               <th>Name</th>

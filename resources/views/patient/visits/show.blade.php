@@ -12,6 +12,9 @@
           <table class="table table-hover">
             <thead>
             </thead>
+
+            <!-- Displays Patients -->
+
             <tbody>
               <tr>
               <th>Date</th>
