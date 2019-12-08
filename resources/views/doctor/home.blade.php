@@ -23,6 +23,8 @@
                     Address: {{ Auth::user()->doctor->address }}
                     <br>
                     Phone: {{ Auth::user()->doctor->phone }}
+                    <br>
+                    Welcome to the Medical Center! <a href="{{ route('doctor.visits.index') }}">Visits</a>
 
                 </div>
             </div>

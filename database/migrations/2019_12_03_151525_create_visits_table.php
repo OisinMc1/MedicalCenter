@@ -1,4 +1,9 @@
 <?php
+# @Date:   2019-12-08T03:57:07+00:00
+# @Last modified time: 2019-12-08T15:24:28+00:00
+
+
+
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -22,8 +27,6 @@ class CreateVisitsTable extends Migration
             $table->bigInteger('doctor_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('patient_id')->references('id')->on('patients')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('doctor_id')->references('id')->on('doctor')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

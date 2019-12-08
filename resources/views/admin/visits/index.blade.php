@@ -7,6 +7,7 @@
       <div class="card">
         <div class="card-header">
           Visits
+          <a href="{{route('admin.visits.create')}}" class="btn btn-primary float-right">Add</a>
         </div>
         <div class="card-body">
           @if (count($visits) === 0)
@@ -23,7 +24,6 @@
             </thead>
             <tbody>
               @foreach ($visits as $visit)
-              @if ($visit->patient->user->id == Auth::user()->id)
               <tr data-id="{{ $visit->id }}">
                 <td>{{ $visit->doctor->user->name }}</td>
                 <td>{{ $visit->patient->user->name }}</td>
@@ -31,15 +31,15 @@
                 <td>{{ $visit->time}}</td>
                 <td>{{ $visit->cost_of_visit}}</td>
                 <td>
-
-                  <form style="display:inline-block" method="POST" action="{{route('patient.visits.destroy',$visit->id)}}">
+                  <a href="{{ route('admin.visits.show', $visit->id) }}" class="btn btn-default">View</a>
+                  <a href="{{ route('admin.visits.edit', $visit->id) }}" class="btn btn-warning">Edit</a>
+                  <form style="display:inline-block" method="POST" action="{{route('admin.visits.destroy',$visit->id)}}">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <button type="submit" class="form-control btn btn-danger">Cancel Visit</a>
+                    <button type="submit" class="form-control btn btn-danger">Delete</a>
                   </form>
                 </td>
               </tr>
-              @endif
               @endforeach
           </tbody>
         </table>
